@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KolanoImaging | Music</title>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: backgroundMove 30s ease infinite;
+      opacity: 0;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 { font-size: 3em; margin-bottom: 40px; text-shadow: 2px 2px 12px rgba(0,0,0,0.8); }
+
+    .tracks { display:flex; flex-direction:column; align-items:center; gap:30px; max-width:800px; margin:auto; }
+    .track-card { position: relative; overflow:hidden; border-radius:15px; background: rgba(255,255,255,0.05); padding:20px; width:100%; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+    .track-card:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(255,255,255,0.2); }
+    .track-card h2 { margin-bottom:10px; font-size:1.8em; }
+    .track-card audio { width:100%; }
+
+    @media (max-width: 600px) { h1{font-size:2.2em;} .track-card h2{font-size:1.4em;} }
+  </style>
+</head>
+<body>
+
+  <h1>Music</h1>
+
+  <div class="tracks">
+    <div class="track-card">
+      <h2>Track 1</h2>
+      <audio controls>
+        <source src="track1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="track-card">
+      <h2>Track 2</h2>
+      <audio controls>
+        <source src="track2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="track-card">
+      <h2>Track 3</h2>
+      <audio controls>
+        <source src="track3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => { document.body.style.transition='opacity 0.8s'; document.body.style.opacity='1'; });
+  </script>
+
+</body>
+</html>
