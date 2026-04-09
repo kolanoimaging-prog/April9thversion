@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KolanoImaging | Photography</title>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: backgroundMove 30s ease infinite;
+      opacity: 0;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 { font-size: 3em; margin-bottom: 40px; text-shadow: 2px 2px 12px rgba(0,0,0,0.8); }
+    .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; max-width:1200px; margin:auto; }
+    .photo-card { position: relative; overflow:hidden; border-radius:15px; transition: transform 0.3s, box-shadow 0.3s; perspective:1000px; cursor:pointer; }
+    .photo-card img { width:300px; height:200px; object-fit:cover; transition: transform 0.8s ease, filter 0.3s; border-radius:15px; }
+    .photo-card:hover img { transform: scale(1.12) translateY(-5px); filter: brightness(0.7); }
+    .photo-card:hover { transform: scale(1.06); box-shadow: 0 25px 50px rgba(255,255,255,0.2); }
+
+    @media (max-width: 900px) { .photo-card img { width:250px; height:170px; } }
+    @media (max-width: 600px) { .photo-card img { width:90%; height:auto; } h1{font-size:2.2em;} }
+  </style>
+</head>
+<body>
+
+  <h1>Photography</h1>
+
+  <div class="gallery">
+    <div class="photo-card"><img src="photo1.jpg" alt="Photo 1"></div>
+    <div class="photo-card"><img src="photo2.jpg" alt="Photo 2"></div>
+    <div class="photo-card"><img src="photo3.jpg" alt="Photo 3"></div>
+    <div class="photo-card"><img src="photo4.jpg" alt="Photo 4"></div>
+  </div>
+
+  <script>
+    // Fade in on load
+    window.addEventListener('load', () => { document.body.style.transition='opacity 0.8s'; document.body.style.opacity='1'; });
+  </script>
+
+</body>
+</html>
